@@ -1,0 +1,875 @@
+/* FOR HOMEPAGE.JS */
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 1rem;
+    /* background-image: url('/images/background2.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: panBackground 40s linear infinite;
+
+}
+.home p{
+  font-family: 'Georgia', serif;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+.home p span{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+/* Responsive image */
+.home img {
+    width: 80vw;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 1rem;
+    animation: heartbeat 3s infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes heartbeat {
+     0%{
+      opacity: 0;
+     }
+    100%{
+      opacity: 1;
+
+    }
+  }
+
+  /* Responsive button */
+  .home button {
+    background-color: #556b2f;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    height: 10vh;
+    width: 50vw;
+    max-width: 300px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 600px) {
+    .home h1 {
+      font-size: 1.5rem;
+    }
+  
+    .home button {
+      height: 8vh;
+      width: 70vw;
+      font-size: 1rem;
+    }
+  }
+
+/* FOR HEADER.JS */
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--var--headerBg); 
+    background-position: center;
+    color: var(--var--headerText);
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8rem;
+}
+
+/* FOR HEROSECTION.JS */
+/* Container layout */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+}
+
+.area1 {
+  flex-basis: 30%;
+  background: var(--var--headerBg); 
+
+}
+
+.area1 img {
+  width: 30vw;
+  height: auto;
+  max-width: 500px;
+}
+
+.area1 p {
+  background: linear-gradient(135deg, 
+  rgba(255, 255, 255, 0.1),
+  rgba(255, 255, 255, 0));
+  --webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 32px;
+  text-align: center;
+
+  color: var(--var--headerText);
+  padding: 2rem;
+  margin: 2.5rem 1rem 0 1rem;
+
+
+
+}
+
+/* Slider structure */
+.slider {
+  flex-basis: 70%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliderInner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.sliderInner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Navigation buttons */
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+/* Dot indicators */
+.dotsContainer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.activeDot {
+  background-color: white;
+}
+
+
+@media screen and (width: 912px) and (min-height: 1368px) {
+  .area1 p{
+    font-size: 1.5rem;
+  }
+
+  .dotsContainer {
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (min-height: 1366px) {
+  .container{
+    height: 70vh;
+    flex-direction: column-reverse;
+  }
+
+  .area1 img{
+      display: none;
+  }
+  .area1 p{
+    font-size: 1.5rem;
+  }
+  .dotsContainer {
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (max-width: 1023px) {
+  .container{
+    height: 50vh;
+  }
+
+  .dotsContainer {
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .area1 img {
+    height: 250px;
+  }
+  .sliderInner img {
+    max-height: 700px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column-reverse;
+    height: 70vh;
+  }
+
+  .area1 img{
+    display: none;
+  }
+
+  .area1 p{
+    padding: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .slider {
+    height: 300px;
+  }
+
+  .prevButton,
+  .nextButton {
+    font-size: 1.5rem;
+  }
+
+  .dotsContainer {
+    display: none;
+  }
+
+  .dot{
+    height: 10px;
+    width: 10px;
+  }
+}
+
+
+
+
+/* FOR DESTINATION.JS */
+
+.destination {
+  /* background-image: url('../../public/images/background3.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: panBackground 40s linear infinite;
+  background-attachment: fixed;
+  overflow: hidden;
+
+} 
+
+
+.destinationOverallDiv{
+  backdrop-filter: blur(8px);
+}
+
+.wedding{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+  color: #333;
+  padding: 1rem;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.wedding  p{
+  font-size: 1.5rem;
+  font-weight:500;
+}
+.wedding .highlight {
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: "Island Moments", cursive;
+  color: #FFC0CB; 
+}
+
+.destination .divForSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+
+}
+.destination section{
+  padding: 1rem;
+  width: 300px;
+  border-radius: 35%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);;
+  margin-bottom: 3rem;
+}
+
+.destination section img{
+  display: block;
+  margin: 20px auto; /* centers the image horizontally */
+  max-width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.destination .divForSection section .sectionP{
+  font-size: 0.9rem;
+}
+
+.destination .divForSection section .hashtag{
+  margin-top: 2rem;
+}
+.destination {
+  text-align: center;
+  font-weight: light;
+  color: black;
+}
+
+.destination section .left, .destination section .right{
+  text-align: center;
+  font-family: "Island Moments", cursive;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+.destination section .center{
+  text-align: center;
+  font-family: "Island Moments", cursive;
+}
+
+.destination section p{
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .wedding{
+    padding: 0.2rem;
+
+  }
+  .wedding  p{
+    font-size: 1.2rem;
+    padding: 0;
+  }
+  .destination section{
+    height: 80vh;
+  }
+  .destination .divForSection section p{
+    padding: 0rem;
+    margin-top: 2rem;
+  }
+  .destination .divForSection section .hashtag{
+
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+/* FOR INVITATIONCARD.JS */
+
+ .invitationCardParentDiv{
+  background: var(--var--headerBg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  overflow: hidden;
+ }
+
+.invitationCard {
+  width: 100%;             
+  /* Take full width of container */
+
+  max-width: 600px;        /* Don't grow too wide on large screens */
+  /* margin: 40px auto;    */
+  padding: 20px;           /* Inner spacing so text doesn't touch edges */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background-color: #fffafa;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  box-sizing: border-box;  
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-out;
+}
+
+.slideIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.invitationCard h2 {
+  margin: 16px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.invitationCard h2 span{
+  color: #4A4037;
+}
+
+.invitationCard p {
+  margin: 12px 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+.invitationCard hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.invitationCard div{
+  background-color: #b1915c;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+.invitationCard div p {
+  font-weight: bold;
+  color: #00000092;
+}
+
+@media (max-width: 600px){
+  .invitationCard {
+
+    padding: 16px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+  }
+
+  .slideIn {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .invitationCard h2 {
+    font-size: 1.2rem;
+  }
+
+  .invitationCard p {
+    font-size: 0.95rem;
+  }
+
+}
+
+/* FOR TRAVEL.JS */
+
+.travel {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;              /* Center it with space above/below */
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #fffefa;      /* Soft ivory or wedding tone */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+  overflow: hidden;
+}
+
+.slideFromLeft{
+  opacity: 1;
+  transform: translateX(0);
+}
+.travel h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #4A4037;
+}
+
+.travel p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.travel a {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-weight: bold;
+  color: #4A4037;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .travel {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+    overflow: hidden;
+    padding: 1rem;
+    width: 300px;
+  }
+
+  .slideFromLeft{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .travel {
+    padding: 1.2rem;
+  }
+
+  .travel h3, .weddingAttire h3 {
+    font-size: 1.4rem;
+  }
+
+  .travel p,
+  .travel a {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* FOR WEDDINGATTIRE.JS */
+.weddingAttire{
+  text-align: center;
+  background-color: #b1915c;
+  height: 30vh;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fffefa;
+  font-family: 'Georgia', serif;
+}
+
+.weddingAttire h3 {
+  font-size: 1.5rem;
+  margin: 0%;
+}
+.weddingAttire p{
+  font-size: 1.2rem;
+
+}
+
+
+/* FOR RSVPFORM.JS */
+.RSVPFormParentDiv{
+  /* background-image: url('../../public/images/background3.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: panBackground 40s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+.RSVPFormParentDiv .RSVPFormOverallDiv{
+  width: 100%;
+  backdrop-filter: blur(8px);
+
+}
+
+.fadeIn{
+  animation: fadeIn 2s ease-out forwards;
+  opacity: 0;
+}
+
+.RSVPForm{
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background-color: #fffafa;
+  font-family: 'Georgia', serif;
+
+
+}
+
+
+@keyframes panBackground {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: top left;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+.RSVPForm h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4A4037;
+  text-align: center;
+}
+
+/* Form groups */
+.RSVPForm div {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.RSVPForm label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #333;
+}
+
+/* Inputs & Select */
+.RSVPForm input,
+.RSVPForm select {
+  display: block;
+  width: 100%;
+  height: 8vh;
+  padding: 10px;
+  background-color: #b1915c;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Submit Button */
+.RSVPForm button {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #4A4037;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.RSVPForm button:hover {
+  background-color: #2e2b26;
+}
+
+
+.showResponse{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+.showResponse{
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+
+}
+.hideResponse{
+  display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+-webkit-box-shadow: transparent; /* Your desired background color */
+-webkit-text-fill-color: #000; /* Optional: text color */
+transition: background-color 5000s ease-in-out 0s; /* prevents flash */
+}
+
+
+@media screen and (max-width: 600px) {
+  .RSVPFormParentDiv{
+  }
+  .RSVPFormParentDiv .RSVPFormOverallDiv{
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+
+
+
+/* FOR THANKYOU.JS */
+.thankYou {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background image with blur */
+.thankYou {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backgroundBlur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: 1;
+}
+
+
+
+/* Overlay for text */
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay p {
+  font-size: 2rem;
+  color: black;
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* FOR AUDIOTAG.JS */
+.audioTag {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.icon {
+  color: #4A4037;
+  transition: transform 0.3s ease;
+}
+
+.spin {
+  animation: spin 3s linear infinite;
+}
+
+.playButton {
+  background-color: #d2691e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  transition: background-color 0.3s ease;
+}
+
+.playButton:hover {
+  background-color: #b3530d;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ANIMATIONS */
+.gradientBackground {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(-45deg, #ffe6f0, #ffc0cb, #fff0f5, #ffccff);
+  background-size: 400% 400%;
+  animation: glow 15s ease infinite;
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

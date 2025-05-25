@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  /* overflow-x:hidden; */
+}
+body.no-scroll {
+  margin: 0;
+  overflow: hidden;
+}
 .App {
   text-align: center;
 }
