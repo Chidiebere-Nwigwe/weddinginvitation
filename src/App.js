@@ -5,7 +5,7 @@ import Invitation from './components/Invitation.js';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/weddinginvitation">
       <Routes>
         <Route path='/' element={<Homepage />}></Route>
         <Route path='/invitation' element={<Invitation />}></Route>
